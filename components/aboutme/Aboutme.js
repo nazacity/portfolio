@@ -20,7 +20,7 @@ const Aboutme = () => {
         >
           <Image
             src="/layout/aboutmebackground.svg"
-            width={'100vw'}
+            width={'100%'}
             height={'auto'}
             layout="responsive"
           />
@@ -108,6 +108,7 @@ const Aboutme = () => {
               initial={{ y: 150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ ease: 'easeIn', duration: 0.8, delay: 2.4 }}
+              style={{ margin: '50px 0' }}
             >
               <Typography
                 style={{
@@ -146,6 +147,7 @@ const Aboutme = () => {
                 display: 'flex',
                 flex: 1,
                 justifyContent: 'space-between',
+                marginTop: 50,
               }}
               initial={{ y: 150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -156,8 +158,8 @@ const Aboutme = () => {
                   height: 120,
                   width: 150,
                   borderTopLeftRadius: 0,
-                  borderTopRightRadius: 50,
-                  borderBottomLeftRadius: 50,
+                  borderTopRightRadius: 60,
+                  borderBottomLeftRadius: 60,
                   borderBottomRightRadius: 50,
                   backgroundColor: COLORS.primary,
                   display: 'flex',
@@ -193,8 +195,8 @@ const Aboutme = () => {
                   height: 120,
                   width: 150,
                   borderTopLeftRadius: 0,
-                  borderTopRightRadius: 50,
-                  borderBottomLeftRadius: 50,
+                  borderTopRightRadius: 60,
+                  borderBottomLeftRadius: 60,
                   borderBottomRightRadius: 50,
                   backgroundColor: COLORS.white,
                   display: 'flex',
@@ -230,8 +232,8 @@ const Aboutme = () => {
                   height: 120,
                   width: 150,
                   borderTopLeftRadius: 0,
-                  borderTopRightRadius: 50,
-                  borderBottomLeftRadius: 50,
+                  borderTopRightRadius: 60,
+                  borderBottomLeftRadius: 60,
                   borderBottomRightRadius: 50,
                   backgroundColor: COLORS.white,
                   display: 'flex',
@@ -359,8 +361,8 @@ const Aboutme = () => {
                   height: 100,
                   width: 120,
                   borderTopLeftRadius: 0,
-                  borderTopRightRadius: 50,
-                  borderBottomLeftRadius: 50,
+                  borderTopRightRadius: 60,
+                  borderBottomLeftRadius: 60,
                   borderBottomRightRadius: 50,
                   backgroundColor: COLORS.primary,
                   display: 'flex',
@@ -394,8 +396,8 @@ const Aboutme = () => {
                   height: 100,
                   width: 120,
                   borderTopLeftRadius: 0,
-                  borderTopRightRadius: 50,
-                  borderBottomLeftRadius: 50,
+                  borderTopRightRadius: 60,
+                  borderBottomLeftRadius: 60,
                   borderBottomRightRadius: 50,
                   backgroundColor: COLORS.white,
                   display: 'flex',
@@ -430,8 +432,8 @@ const Aboutme = () => {
                   height: 100,
                   width: 120,
                   borderTopLeftRadius: 0,
-                  borderTopRightRadius: 50,
-                  borderBottomLeftRadius: 50,
+                  borderTopRightRadius: 60,
+                  borderBottomLeftRadius: 60,
                   borderBottomRightRadius: 50,
                   backgroundColor: COLORS.white,
                   display: 'flex',

@@ -110,20 +110,23 @@ const ElevateAppBar = (props) => {
     {
       id: 3,
       title: t('common:experiences'),
-      path: '#aboutme',
+      // path: '#experiences',
+      path: '#services',
+
       offset: '0',
     },
     {
       id: 4,
       title: t('common:services'),
-      path: '#aboutme',
-      offset: '0',
+      path: '#services',
+      offset: '100',
     },
     {
       id: 5,
       title: t('common:portfolio'),
-      path: '#aboutme',
-      offset: '0',
+      // path: '#portfolio',
+      path: '#portfolio',
+      offset: '100',
     },
   ];
 
@@ -215,9 +218,10 @@ const ElevateAppBar = (props) => {
           <Collapse in={open} timeout="auto" unmountOnExit>
             <InfoBar />
             <List component="div" disablePadding>
-              {menuItems.map((menu, item) => {
+              {menuItems.map((menu) => {
                 return (
                   <AnchorLink
+                    key={menu.id}
                     href={menu.path}
                     offset={menu.offset}
                     onClick={(e) => {

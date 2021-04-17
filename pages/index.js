@@ -6,6 +6,8 @@ import Home from '../components/home/Home';
 import Aboutme from '../components/aboutme/Aboutme';
 import InfoBar from '../components/layout/InfoBar';
 import { Hidden } from '@material-ui/core';
+import Service from '../components/service/Service';
+import Portfolio from '../components/portfolio/Portfolio';
 
 export default function index() {
   let { t } = useTranslation();
@@ -18,6 +20,8 @@ export default function index() {
       <NavBar />
       <Home />
       <Aboutme />
+      <Service />
+      <Portfolio />
     </div>
   );
 }
