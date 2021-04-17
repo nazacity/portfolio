@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { persistor, store } from '../redux/store';
 import InfoBar from '../components/layout/InfoBar';
+import '../styles/globals.css';
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -47,7 +48,6 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <PersistGate persistor={persistor}>
-            <InfoBar />
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             <Component {...pageProps} />

@@ -10,3 +10,14 @@ body {
   box-sizing: border-box;
   margin: 0;
 }
+
+a {
+  text-decoration: none;
+}
+
+.menu {
+  color: #707070;
+}
+.menu.is-current {
+  color: #00b4b4;
+}

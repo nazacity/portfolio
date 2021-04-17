@@ -19,7 +19,9 @@ import { loadCSS } from 'fg-loadcss';
 import MenuIcon from '@material-ui/icons/Menu';
 import { COLORS, FONTS } from '../../styles';
 import useTranslation from 'next-translate/useTranslation';
+import Scrollspy from 'react-scrollspy';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import InfoBar from './InfoBar';
 
 const useStyles = makeStyles((theme) => ({
   socialButton: {
@@ -92,6 +94,44 @@ const ElevateAppBar = (props) => {
   const handleMenuClose = (event, newValue) => {
     setOpen(false);
   };
+  const menuItems = [
+    {
+      id: 1,
+      title: t('common:home'),
+      path: '#home',
+      offset: '100',
+    },
+    {
+      id: 2,
+      title: t('common:aboutme'),
+      path: '#aboutme',
+      offset: '0',
+    },
+    {
+      id: 3,
+      title: t('common:experiences'),
+      path: '#aboutme',
+      offset: '0',
+    },
+    {
+      id: 4,
+      title: t('common:services'),
+      path: '#aboutme',
+      offset: '0',
+    },
+    {
+      id: 5,
+      title: t('common:portfolio'),
+      path: '#aboutme',
+      offset: '0',
+    },
+  ];
+
+  const scrollItems = [];
+
+  menuItems.forEach((item) => {
+    scrollItems.push(item.path.slice(1));
+  });
 
   return (
     <React.Fragment>
@@ -132,50 +172,29 @@ const ElevateAppBar = (props) => {
                 justifyContent: 'flex-end',
               }}
             >
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                textColor="primary"
-                TabIndicatorProps={{
-                  style: { backgroundColor: COLORS.primary },
-                }}
-                className={classes.tabsStyle}
+              <Scrollspy
+                items={scrollItems}
+                currentClassName="is-current"
+                style={{ display: 'flex', justifyContent: 'flex-end', flex: 1 }}
               >
-                <AnchorLink
-                  ref={homeRef}
-                  href="#home"
-                  style={{ textDecoration: 'none' }}
-                >
-                  <Tab
-                    label={t('common:home')}
-                    className={classes.tabStyle}
-                    value={0}
-                  />
-                </AnchorLink>
-
-                <AnchorLink href="#aboutme">
-                  <Tab
-                    label={t('common:aboutme')}
-                    className={classes.tabStyle}
-                    value={1}
-                  />
-                </AnchorLink>
-                <Tab
-                  label={t('common:experiences')}
-                  className={classes.tabStyle}
-                  value={2}
-                />
-                <Tab
-                  label={t('common:services')}
-                  className={classes.tabStyle}
-                  value={3}
-                />
-                <Tab
-                  label={t('common:portfolio')}
-                  className={classes.tabStyle}
-                  value={4}
-                />
-              </Tabs>
+                {menuItems.map((menu, index) => {
+                  return (
+                    // <li key={menu.id} className={'menu'}>
+                    <AnchorLink
+                      href={menu.path}
+                      offset={menu.offset}
+                      key={menu.id}
+                      className="menu"
+                      style={{ width: 100 }}
+                    >
+                      <Typography style={{ textAlign: 'center' }}>
+                        {menu.title}
+                      </Typography>
+                    </AnchorLink>
+                    // </li>
+                  );
+                })}
+              </Scrollspy>
             </div>
           </Hidden>
           <Hidden mdUp>
@@ -194,57 +213,27 @@ const ElevateAppBar = (props) => {
         </Toolbar>
         <Hidden mdUp>
           <Collapse in={open} timeout="auto" unmountOnExit>
+            <InfoBar />
             <List component="div" disablePadding>
-              <ListItem button className={classes.nested}>
-                <ListItemText
-                  primary={t('common:home')}
-                  className={classes.menuList}
-                  onClick={(e) => {
-                    handleChange(e, 0);
-                    handleMenuClose();
-                  }}
-                />
-              </ListItem>
-              <ListItem button className={classes.nested}>
-                <ListItemText
-                  primary={t('common:aboutme')}
-                  className={classes.menuList}
-                  onClick={(e) => {
-                    handleChange(e, 1);
-                    handleMenuClose();
-                  }}
-                />
-              </ListItem>
-              <ListItem button className={classes.nested}>
-                <ListItemText
-                  primary={t('common:experiences')}
-                  className={classes.menuList}
-                  onClick={(e) => {
-                    handleChange(e, 2);
-                    handleMenuClose();
-                  }}
-                />
-              </ListItem>
-              <ListItem button className={classes.nested}>
-                <ListItemText
-                  primary={t('common:services')}
-                  className={classes.menuList}
-                  onClick={(e) => {
-                    handleChange(e, 3);
-                    handleMenuClose();
-                  }}
-                />
-              </ListItem>
-              <ListItem button className={classes.nested}>
-                <ListItemText
-                  primary={t('common:portfolio')}
-                  className={classes.menuList}
-                  onClick={(e) => {
-                    handleChange(e, 4);
-                    handleMenuClose();
-                  }}
-                />
-              </ListItem>
+              {menuItems.map((menu, item) => {
+                return (
+                  <AnchorLink
+                    href={menu.path}
+                    offset={menu.offset}
+                    onClick={(e) => {
+                      handleChange(e, 0);
+                      handleMenuClose();
+                    }}
+                  >
+                    <ListItem className={classes.nested} key={menu.id}>
+                      <ListItemText
+                        primary={menu.title}
+                        className={classes.menuList}
+                      />
+                    </ListItem>
+                  </AnchorLink>
+                );
+              })}
             </List>
           </Collapse>
         </Hidden>

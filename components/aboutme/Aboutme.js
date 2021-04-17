@@ -2,12 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 import { Typography, Button, Hidden } from '@material-ui/core';
 import { COLORS } from '../../styles';
+import { motion } from 'framer-motion';
 
 const Aboutme = () => {
   return (
     <div style={{ position: 'relative' }} id="aboutme">
       <Hidden smDown>
-        <div
+        <motion.div
+          initial={{ y: 150, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ ease: 'easeIn', duration: 0.8, delay: 1.6 }}
           style={{
             position: 'absolute',
             width: '100%',
@@ -20,7 +24,7 @@ const Aboutme = () => {
             height={'auto'}
             layout="responsive"
           />
-        </div>
+        </motion.div>
       </Hidden>
 
       <Hidden mdUp>
@@ -48,7 +52,10 @@ const Aboutme = () => {
             paddingTop: '15vw',
           }}
         >
-          <div
+          <motion.div
+            initial={{ y: 150, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ease: 'easeIn', duration: 0.8, delay: 1.8 }}
             style={{
               paddingLeft: 100,
               display: 'flex',
@@ -64,9 +71,13 @@ const Aboutme = () => {
               height={350}
               layout="intrinsic"
             />
-          </div>
+          </motion.div>
           <div>
-            <div>
+            <motion.div
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: 'easeIn', duration: 0.8, delay: 2 }}
+            >
               <Typography
                 style={{
                   color: COLORS.secondaryTextColor,
@@ -77,8 +88,12 @@ const Aboutme = () => {
               >
                 Let me introduce myself
               </Typography>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: 'easeIn', duration: 0.8, delay: 2.2 }}
+            >
               <Typography
                 style={{
                   color: COLORS.primaryTextColor,
@@ -88,8 +103,12 @@ const Aboutme = () => {
               >
                 About Me
               </Typography>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: 'easeIn', duration: 0.8, delay: 2.4 }}
+            >
               <Typography
                 style={{
                   color: COLORS.secondaryTextColor,
@@ -104,8 +123,12 @@ const Aboutme = () => {
                 as a Self-project and Freelance. I'm looking for new
                 chanllenging project. Might be startup or something else.
               </Typography>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: 'easeIn', duration: 0.8, delay: 2.6 }}
+            >
               <Button
                 variant="contained"
                 color="primary"
@@ -117,13 +140,16 @@ const Aboutme = () => {
               >
                 View Portfolio
               </Button>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
               style={{
                 display: 'flex',
                 flex: 1,
                 justifyContent: 'space-between',
               }}
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: 'easeIn', duration: 0.8, delay: 2.8 }}
             >
               <div
                 style={{
@@ -236,7 +262,7 @@ const Aboutme = () => {
                   Managing project
                 </Typography>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </Hidden>
@@ -377,6 +403,7 @@ const Aboutme = () => {
                   alignItems: 'center',
                   marginTop: 20,
                   boxShadow: '1px 1px 20px 0px rgba(0,0,0,0.4)',
+                  zIndex: 50,
                 }}
               >
                 <Typography
@@ -406,17 +433,18 @@ const Aboutme = () => {
                   borderTopRightRadius: 50,
                   borderBottomLeftRadius: 50,
                   borderBottomRightRadius: 50,
-                  backgroundColor: COLORS.primary,
+                  backgroundColor: COLORS.white,
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   marginTop: 20,
                   boxShadow: '1px 1px 20px 0px rgba(0,0,0,0.4)',
+                  zIndex: 50,
                 }}
               >
                 <Typography
                   style={{
-                    color: COLORS.white,
+                    color: COLORS.primary,
                     fontWeight: 600,
                     fontSize: 40,
                   }}
@@ -425,7 +453,7 @@ const Aboutme = () => {
                 </Typography>
                 <Typography
                   style={{
-                    color: COLORS.white,
+                    color: COLORS.primary,
                     fontWeight: 400,
                     fontSize: 10,
                   }}
