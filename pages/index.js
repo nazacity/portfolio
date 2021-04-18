@@ -8,12 +8,13 @@ import InfoBar from '../components/layout/InfoBar';
 import { Hidden } from '@material-ui/core';
 import Service from '../components/service/Service';
 import Portfolio from '../components/portfolio/Portfolio';
+import Footer from '../components/footer/Footer';
 
 export default function index() {
   let { t } = useTranslation();
 
   return (
-    <div style={{ height: 5000 }}>
+    <div>
       <Hidden smDown>
         <InfoBar />
       </Hidden>
@@ -22,6 +23,7 @@ export default function index() {
       <Aboutme />
       <Service />
       <Portfolio />
+      <Footer />
     </div>
   );
 }
